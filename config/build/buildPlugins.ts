@@ -8,7 +8,6 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new webpack.ProgressPlugin(),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
     new HTMLWebpackPlugin({
       template: paths.html
     }),
@@ -22,7 +21,11 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
   ]
 
   if (isDev) {
-    plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin({ overlay: false }))
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new ReactRefreshWebpackPlugin({ overlay: false }),
+      new BundleAnalyzerPlugin({ openAnalyzer: false })
+    )
   }
 
   return plugins
