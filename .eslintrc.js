@@ -28,7 +28,8 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
-    '@typescript-eslint/explicit-function-return-type': 'warn'
+    '@typescript-eslint/explicit-function-return-type': 'warn',
+    '@typescript-eslint/consistent-type-assertions': 'warn'
   },
   globals: {
     __IS_DEV__: true

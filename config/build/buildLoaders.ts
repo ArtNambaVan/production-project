@@ -1,5 +1,4 @@
 import type webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { type BuildOptions } from './types/config'
 import ReactRefreshTypeScript from 'react-refresh-typescript'
 import { buildCssLoaders } from './loaders/buildCssLoaders'
