@@ -8,7 +8,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'plugin:react-hooks/recommended'
   ],
   overrides: [
   ],
@@ -29,7 +30,9 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
     '@typescript-eslint/explicit-function-return-type': 'warn',
-    '@typescript-eslint/consistent-type-assertions': 'warn'
+    '@typescript-eslint/consistent-type-assertions': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   },
   globals: {
     __IS_DEV__: true
