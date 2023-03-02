@@ -96,9 +96,6 @@
     "react-router-dom": "^6.8.0"
   },
   "loki": {
-    "looks-same": {
-      "ignoreCaret": true
-    },
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
@@ -111,7 +108,6 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
-    },
-    "chromeDockerUseCopy": true
+    }
   }
 }
