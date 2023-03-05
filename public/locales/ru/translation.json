@@ -4,5 +4,7 @@
   "language_short": "Ру",
   "page_not_found": "Страница не найдена",
   "error_occurred": "Произошла ошибка",
-  "reload_page": "Перезагрузить страницу"
+  "reload_page": "Перезагрузить страницу",
+  "increment": "Увеличить счётчик",
+  "decrement": "Уменьшить счётчик"
 }

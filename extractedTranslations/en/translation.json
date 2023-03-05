@@ -1,7 +1,9 @@
 {
   "about_page": "",
+  "decrement": "decrement",
   "enter": "enter",
   "error_occurred": "",
+  "increment": "increment",
   "language": "",
   "language_short": "language_short",
   "main_page": "",

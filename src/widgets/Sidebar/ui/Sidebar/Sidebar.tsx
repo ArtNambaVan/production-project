@@ -15,7 +15,7 @@ interface SidebarProps extends Omit<HTMLProps<HTMLElement>, 'className'> {
 }
 
 export const Sidebar = ({ className }: SidebarProps): React.ReactElement => {
-  const { t } = useTranslation()
+  const { t } = useTranslation(['main', 'about'])
   const [collapsed, setCollapsed] = useState<boolean>(false)
 
   const onToggle = (): void => {

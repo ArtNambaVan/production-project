@@ -4,5 +4,7 @@
   "language_short": "En",
   "page_not_found": "Page not found",
   "error_occurred": "Error occurred",
-  "reload_page": "Reload page"
+  "reload_page": "Reload page",
+  "increment": "Increment counter",
+  "decrement": "Decrement counter"
 }
