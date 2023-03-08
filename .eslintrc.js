@@ -25,6 +25,8 @@ module.exports = {
   rules: {
     'react/jsx-indent': [2, 2],
     'no-unused-vars': 'warn',
+    'react/display-name': 'off',
+    'react/no-unused-prop-types': 'error',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',

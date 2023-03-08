@@ -6,5 +6,8 @@
   "error_occurred": "Error occurred",
   "reload_page": "Reload page",
   "increment": "Increment counter",
-  "decrement": "Decrement counter"
+  "decrement": "Decrement counter",
+  "enter": "Enter",
+  "input_username": "Input username",
+  "input_password": "Input password"
 }

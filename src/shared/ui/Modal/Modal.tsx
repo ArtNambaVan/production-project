@@ -13,7 +13,7 @@ interface ModalProps extends Omit<HTMLProps<HTMLElement>, 'className'> {
 
 const ANIMATION_DELAY = 300
 
-export const Modal = (props: ModalProps): React.ReactElement => {
+export const Modal = (props: ModalProps): React.ReactElement | null => {
   const {
     className,
     children,
@@ -33,7 +33,7 @@ export const Modal = (props: ModalProps): React.ReactElement => {
   const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
-      console.log('onClose', timerRef)
+
       timerRef.current = setTimeout(() => {
         onClose()
         setIsClosing(false)
@@ -46,7 +46,6 @@ export const Modal = (props: ModalProps): React.ReactElement => {
   }
 
   const onKeyDown = useCallback((event: KeyboardEvent) => {
-    console.log('tuck tuck')
     if (event.key === 'Escape') {
       closeHandler()
     }
@@ -60,9 +59,12 @@ export const Modal = (props: ModalProps): React.ReactElement => {
     return () => {
       clearTimeout(timerRef.current)
       window.removeEventListener('keydown', onKeyDown)
-      console.log('cleared')
     }
   }, [isOpen, onKeyDown])
+
+  if (!isOpen) {
+    return null
+  }
 
   return (
     <Portal>

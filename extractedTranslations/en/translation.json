@@ -4,6 +4,8 @@
   "enter": "enter",
   "error_occurred": "",
   "increment": "increment",
+  "input_password": "input_password",
+  "input_username": "input_username",
   "language": "",
   "language_short": "language_short",
   "main_page": "",
