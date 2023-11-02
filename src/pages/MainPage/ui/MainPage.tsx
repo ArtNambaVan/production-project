@@ -16,6 +16,7 @@ const MainPage = (): React.ReactElement => {
       <Input value={value} label='Введите текст ' onChange={onChange}/>
       <Counter />
       <BugButton/>
+      <div id='target'>TEST</div>
       {t('main_page')}
     </div>
   )
