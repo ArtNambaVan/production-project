@@ -9,5 +9,7 @@
   "decrement": "Уменьшить счётчик",
   "enter": "Войти",
   "input_username": "Введите имя",
-  "input_password": "Введите пароль"
+  "input_password": "Введите пароль",
+  "authenticate_form": "Форма авторизации",
+  "login_issue": "Вы ввели неправильный логин или пароль"
 }

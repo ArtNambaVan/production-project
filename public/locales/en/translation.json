@@ -9,5 +9,7 @@
   "decrement": "Decrement counter",
   "enter": "Enter",
   "input_username": "Input username",
-  "input_password": "Input password"
+  "input_password": "Input password",
+  "authenticate_form": "Authenticate form",
+  "login_issue": "Login or password issue"
 }

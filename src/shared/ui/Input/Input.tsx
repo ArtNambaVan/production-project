@@ -67,6 +67,7 @@ export const Input = memo((props: InputProps) => {
           onSelect={onSelect}
           className={cls.input}
           ref={inputRef}
+          value={value}
           {...otherProps}
         />
         {isFocused && (

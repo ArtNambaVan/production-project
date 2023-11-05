@@ -1,12 +1,9 @@
-import 'app/styles/index.scss'
 import { type Story } from '@storybook/react'
-import { StoreProvider } from 'app/providers/StoreProvider'
-import React from 'react'
+import { type StateSchema, StoreProvider } from 'app/providers/StoreProvider'
+import { type DeepPartial } from '@reduxjs/toolkit'
 
-export const StoreDecorator = (StoryComponent: Story): React.ReactElement => {
-  return (
-    <StoreProvider>
-      <StoryComponent/>
-    </StoreProvider>
-  )
-}
+export const StoreDecorator = (state: DeepPartial<StateSchema>) => (StoryComponent: Story) => (
+  <StoreProvider initialState={state}>
+    <StoryComponent />
+  </StoreProvider>
+)

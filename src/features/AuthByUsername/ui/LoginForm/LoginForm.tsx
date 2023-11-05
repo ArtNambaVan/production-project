@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux'
 import { loginActions } from '../../model/slice/loginSlice'
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
-import { useAppDispatch } from 'app/providers/StoreProvider/lib/hooks'
+import { useAppDispatch } from 'app/providers/StoreProvider/lib/useAppDispatch/useAppDispatch'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 
 interface LoginFormProps extends Omit<HTMLProps<HTMLElement>, 'className'> {
   className?: string
@@ -18,25 +19,25 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
-  const { setUsername, setPassword } = loginActions
-  const { password, username } = useSelector(getLoginState)
+  const { username, password, error, isLoading } = useSelector(getLoginState)
+  console.log(username, password)
 
   const onChangeUsername = useCallback((value: string) => {
-    dispatch(setUsername(value))
-  }, [dispatch, setUsername])
+    dispatch(loginActions.setUsername(value))
+  }, [dispatch])
 
   const onChangePassword = useCallback((value: string) => {
-    dispatch(setPassword(value))
-  }, [dispatch, setPassword])
+    dispatch(loginActions.setPassword(value))
+  }, [dispatch])
 
-  const onLoginClock = useCallback(() => {
-    void dispatch(loginByUsername({ username, password })).then(() => {
-      // do additional work
-    })
+  const onLoginClick = useCallback(() => {
+    void dispatch(loginByUsername({ username, password }))
   }, [dispatch, password, username])
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
+      <Text title={t('authenticate_form')}/>
+      {error && <Text text={error} theme={TextTheme.ERROR} />}
       <Input
         label={t('input_username')}
         className={cls.input}
@@ -52,7 +53,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
         onChange={onChangePassword}
         className={cls.input}
       />
-      <Button className={cls.loginBtn} theme={ButtonTheme.OUTLINE} onClick={onLoginClock}>
+      <Button className={cls.loginBtn} theme={ButtonTheme.OUTLINE} onClick={onLoginClick} disabled={isLoading}>
         {t('enter')}
       </Button>
     </div>
