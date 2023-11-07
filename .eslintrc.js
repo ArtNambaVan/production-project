@@ -34,7 +34,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'warn',
     '@typescript-eslint/consistent-type-assertions': 'warn',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+    '@typescript-eslint/no-dynamic-delete': 'off'
   },
   globals: {
     __IS__DEV__: true
